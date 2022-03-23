@@ -17,4 +17,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-        run: snyk test --json --print-deps | snyk-delta
+        run: |
+          npm i -g snyk-delta
+          snyk test --json --print-deps | snyk-delta
