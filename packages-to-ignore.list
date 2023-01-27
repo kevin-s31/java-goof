@@ -1,0 +1,4 @@
+org.springframework:spring-beans*
+org.hibernate:hibernate-core*
+org.hibernate:*
+org.springframework:spring-context@3.2.6.RELEASE
