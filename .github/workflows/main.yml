@@ -1,0 +1,14 @@
+name: Using Snyk in Github Actions
+on: push
+jobs:
+  snyk-code-test-upload: 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Snyk monitor
+        uses: snyk/actions/maven@master
+        #continue-on-error: true
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --monitor
