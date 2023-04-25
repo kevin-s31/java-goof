@@ -1,7 +1,7 @@
 name: Using Snyk in Github Actions
 on: push
 jobs:
-  snyk-code-test-upload: 
+  snyk-monitor: 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -11,4 +11,4 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          args: --monitor
+          args: --monitor --all-projects
